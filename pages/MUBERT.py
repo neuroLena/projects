@@ -20,6 +20,12 @@ from textblob import TextBlob
 
 import os
 import logging
+
+# from dotenv import load_dotenv
+
+# # Load variables from .env file
+# load_dotenv()
+
 ##----------------------------------------------------------------
 
 st.set_page_config(page_title="MUBERT", page_icon="🧿")
@@ -31,16 +37,17 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 from pathlib import Path
 
-# Get the absolute path to the current directory (where the script is located)
-MAIN_DIR = Path(__file__).resolve().parent.parent
+# # Get the absolute path to the current directory (where the script is located)
+# MAIN_DIR = Path(__file__).resolve().parent.parent
 
 
+MAIN_PATH = Path(__file__).resolve().parents[1]
 # curr_dir = os.getcwd()
 # MAIN_DIR=os.path.dirname(curr_dir)
 
-logging.info(f"LOG: main dir = {MAIN_DIR}")
+# logging.info(f"LOG: main dir = {MAIN_DIR}")
 
-data_path=f'{MAIN_DIR}/resources/mubert'
+data_path=f'{MAIN_PATH}/resources/mubert'
 logging.info(f"LOG: data_path = {data_path}")
 with open(f'{data_path}/prepair_clean.md', "r") as file:
     clean_md = file.read()
