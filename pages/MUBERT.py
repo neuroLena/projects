@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-
 import numpy as np
 
 # for classifier
@@ -20,6 +19,7 @@ import matplotlib.pyplot as plt
 from textblob import TextBlob
 
 import os
+import logging
 ##----------------------------------------------------------------
 
 st.set_page_config(page_title="MUBERT", page_icon="🧿")
@@ -27,12 +27,15 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 # Get the absolute path to the current directory (where the script is located)
 MAIN_DIR = os.path.dirname(os.getcwd())
+MAIN_DIR = os.getcwd()
+logging.info(f"LOG: main dir = {MAIN_DIR}")
 
 data_path=f'{MAIN_DIR}/resources/mubert'
-# with open(f'{data_path}/prepair_clean.md', "r") as file:
-#     clean_md = file.read()
-# with open(f'{data_path}/prepair_balance.md', "r") as file:
-#     balance_md = file.read()
+logging.info(f"LOG: data_path = {data_path}")
+with open(f'{data_path}/prepair_clean.md', "r") as file:
+    clean_md = file.read()
+with open(f'{data_path}/prepair_balance.md', "r") as file:
+    balance_md = file.read()
         
 # clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
 # balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
