@@ -19,7 +19,16 @@ st.set_page_config(
 
 st.title("👾 Neuro Lena Projects")
 import os
-st.write(print(os.system("ls ..")))
+from pathlib import Path
+import pandas as pd
+MAIN_PATH = Path(__file__).resolve().parents[0]
+st.write(MAIN_PATH)
+data_path=os.path.join( MAIN_PATH,"resources/mubert")
+clean_df = pd.read_csv( os.path.join( data_path,"clean_df.csv") )
+st.dataframe(clean_df.head(3))
+# st.write(print(os.system("ls ..")))
+
+
 dt_now = dt.datetime.now()
 dt_str = dt_now.strftime("%Y-%m-%d")
 dt_weekday = dt_now.strftime("%A")
