@@ -26,7 +26,7 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 
 # Get the absolute path to the current directory (where the script is located)
-MAIN_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MAIN_DIR = os.path.dirname(os.getcwd())
 
 data_path=f'{MAIN_DIR}/resources/mubert'
 with open(f'{data_path}/prepair_clean.md', "r") as file:
