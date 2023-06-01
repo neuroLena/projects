@@ -26,9 +26,18 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 
 # Get the absolute path to the current directory (where the script is located)
+
+# MAIN_DIR = "/projects"
+
+from pathlib import Path
+
+# Get the absolute path to the current directory (where the script is located)
+MAIN_DIR = Path(__file__).resolve().parent.parent
+
+
 # curr_dir = os.getcwd()
-MAIN_DIR = "/projects"#os.path.dirname(curr_dir)
-# MAIN_DIR = os.getcwd()
+# MAIN_DIR=os.path.dirname(curr_dir)
+
 logging.info(f"LOG: main dir = {MAIN_DIR}")
 
 data_path=f'{MAIN_DIR}/resources/mubert'
