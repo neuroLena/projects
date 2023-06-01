@@ -42,17 +42,27 @@ from pathlib import Path
 
 
 MAIN_PATH = Path(__file__).resolve().parents[1]
-# curr_dir = os.getcwd()
-# MAIN_DIR=os.path.dirname(curr_dir)
 
-# logging.info(f"LOG: main dir = {MAIN_DIR}")
 
-data_path=f'{MAIN_PATH}/resources/mubert'
-logging.info(f"LOG: data_path = {data_path}")
+def get_abs_path(rel_path: str, filename: str) -> str:
+    """Return absolute path to the file with relative path"""
+    return os.path.join(
+        MAIN_PATH,
+        rel_path,
+        filename,
+    )
+
+data_path=os.path.join( MAIN_PATH,"resources/mubert")
 with open(f'{data_path}/prepair_clean.md', "r") as file:
     clean_md = file.read()
 with open(f'{data_path}/prepair_balance.md', "r") as file:
     balance_md = file.read()
+
+# data_path=f'{MAIN_PATH}/resources/mubert'
+# with open(f'{data_path}/prepair_clean.md', "r") as file:
+#     clean_md = file.read()
+# with open(f'{data_path}/prepair_balance.md', "r") as file:
+#     balance_md = file.read()
         
 # clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
 # balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
