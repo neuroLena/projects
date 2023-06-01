@@ -64,7 +64,7 @@ with open(f'{data_path}/prepair_balance.md', "r") as file:
 # with open(f'{data_path}/prepair_balance.md', "r") as file:
 #     balance_md = file.read()
         
-clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
+clean_df = pd.read_csv( os.path.join( data_path,"clean_df.csv") )
 balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
 
 # @st.cache
