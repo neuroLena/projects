@@ -19,11 +19,11 @@ st.set_page_config(
 
 st.title("👾 Neuro Lena Projects")
 import os
-from pathlib import Path
+# from pathlib import Path
 import pandas as pd
-MAIN_PATH = Path(__file__).resolve().parents[0]
-st.write(MAIN_PATH)
-clean_df = pd.read_csv( os.path.join( MAIN_PATH,"clean_df.csv") )
+# MAIN_PATH = Path(__file__).resolve().parents[0]
+# st.write(MAIN_PATH)
+clean_df = pd.read_csv( "/app/projects/clean_df.csv") 
 st.dataframe(clean_df.head(3))
 # st.write(print(os.system("ls ..")))
 
