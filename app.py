@@ -18,8 +18,8 @@ st.set_page_config(
 ## Home Header ----------------------------------------------------------------
 
 st.title("👾 Neuro Lena Projects")
-
-
+import os
+st.write(print(os.system("ls ..")))
 dt_now = dt.datetime.now()
 dt_str = dt_now.strftime("%Y-%m-%d")
 dt_weekday = dt_now.strftime("%A")

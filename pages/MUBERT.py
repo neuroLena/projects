@@ -58,6 +58,8 @@ with open(f'{data_path}/prepair_clean.md', "r") as file:
 with open(f'{data_path}/prepair_balance.md', "r") as file:
     balance_md = file.read()
 
+print(os.system("ls ../resources/mubert"))
+
 # data_path=f'{MAIN_PATH}/resources/mubert'
 # with open(f'{data_path}/prepair_clean.md', "r") as file:
 #     clean_md = file.read()
@@ -65,7 +67,7 @@ with open(f'{data_path}/prepair_balance.md', "r") as file:
 #     balance_md = file.read()
         
 clean_df = pd.read_csv( os.path.join( data_path,"clean_df.csv") )
-balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
+balanced_df = pd.read_csv(os.path.join( data_path, "balanced_df.csv"))
 
 # @st.cache
 # def load_data(file_path):
@@ -97,8 +99,8 @@ with tabs[0]:
     with st.echo():
         # Load original files
         dir_path=data_path
-        data = pd.read_csv(f'{dir_path}/ttm_dump.csv')
-        tags = pd.read_json(f'{dir_path}/sid_tags.json', orient='index')
+        data = pd.read_csv(os.path.join(data_path,"ttm_dump.csv"))
+        tags = pd.read_json(os.path.join(data_path,"sid_tags.json"), orient='index')
         st.write(f'ttm_dump size: {data.shape}')
         st.dataframe(data.head(3))
         st.write(f'sid_tags size: {tags.shape}')
@@ -200,13 +202,13 @@ with tabs[0]:
 ## Tab: EDA -------------------------------------------------------
 with tabs[1]:
     # st.dataframe(balanced_df.head())
-    df = pd.read_csv(f'{dir_path}/balanced_df.csv') 
+    df = pd.read_csv(os.path.join(data_path,"balanced_df.csv")) 
     with st.echo():
         import matplotlib.pyplot as plt
         import pandas as pd
         from textblob import TextBlob
 
-        df = pd.read_csv(f'{data_path}/balanced_df.csv')
+        df = pd.read_csv(os.path.join( data_path,"balanced_df.csv"))
         df['sid'].value_counts()[df['sid'].value_counts()>1]
     
     with st.echo():
@@ -257,7 +259,7 @@ with tabs[2]:
     st.header('Prepare data for classifier')
     with st.echo():
         # Load preprocessed data
-        df = pd.read_csv(f'{dir_path}/balanced_df.csv')  
+        df = pd.read_csv(os.path.join(data_path,"balanced_df.csv"))  
         # Split data
         train_data, test_data = train_test_split(df, 
                                                     test_size = 0.1, 
@@ -290,7 +292,7 @@ with tabs[2]:
                                                 bs=bs,
                                                 path='')
             # Create a language model learner
-            lang_learner = language_model_learner(lang_mod, 
+            lang_learner = language_model_learner(dl_lang, 
                                                     arch=arch, 
                                                     pretrained = True, 
                                                     drop_mult=0.3)
