@@ -23,7 +23,7 @@ import os
 import pandas as pd
 # MAIN_PATH = Path(__file__).resolve().parents[0]
 # st.write(MAIN_PATH)
-clean_df = pd.read_csv( "/app/projects/clean_df.csv") 
+clean_df = pd.read_csv( "/app/projects/data/clean_df.csv") 
 st.dataframe(clean_df.head(3))
 # st.write(print(os.system("ls ..")))
 
