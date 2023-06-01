@@ -26,16 +26,16 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 
 # Get the absolute path to the current directory (where the script is located)
-MAIN_DIR = os.getcwd()
+MAIN_DIR = os.path.dirname(os.getcwd())
 
 data_path=f'{MAIN_DIR}/resources/mubert'
-with open(f'{data_path}/prepair_clean.md', "r") as file:
-    clean_md = file.read()
-with open(f'{data_path}/prepair_balance.md', "r") as file:
-    balance_md = file.read()
+# with open(f'{data_path}/prepair_clean.md', "r") as file:
+#     clean_md = file.read()
+# with open(f'{data_path}/prepair_balance.md', "r") as file:
+#     balance_md = file.read()
         
-clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
-balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
+# clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
+# balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
 
 @st.cache
 def load_data(file_path):
