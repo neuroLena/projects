@@ -19,12 +19,16 @@ from fastai.text.all import *
 import matplotlib.pyplot as plt
 from textblob import TextBlob
 
-
+import os
 ##----------------------------------------------------------------
 
 st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
-data_path='/Users/mymac/Documents/GitHub/streamlit_apps/portfolio/resources/mubert'
+
+# Get the absolute path to the current directory (where the script is located)
+MAIN_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+data_path=f'{MAIN_DIR}/resources/mubert'
 with open(f'{data_path}/prepair_clean.md', "r") as file:
     clean_md = file.read()
 with open(f'{data_path}/prepair_balance.md', "r") as file:
