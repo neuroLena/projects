@@ -23,8 +23,7 @@ from pathlib import Path
 import pandas as pd
 MAIN_PATH = Path(__file__).resolve().parents[0]
 st.write(MAIN_PATH)
-data_path=os.path.join( MAIN_PATH,"data")
-clean_df = pd.read_csv( os.path.join( data_path,"clean_df.csv") )
+clean_df = pd.read_csv( os.path.join( MAIN_PATH,"clean_df.csv") )
 st.dataframe(clean_df.head(3))
 # st.write(print(os.system("ls ..")))
 
