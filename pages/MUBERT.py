@@ -64,17 +64,17 @@ with open(f'{data_path}/prepair_balance.md', "r") as file:
 # with open(f'{data_path}/prepair_balance.md', "r") as file:
 #     balance_md = file.read()
         
-# clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
-# balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
+clean_df = pd.read_csv(f'{data_path}/clean_df.csv')
+balanced_df = pd.read_csv(f'{data_path}/balanced_df.csv')
 
-@st.cache
-def load_data(file_path):
-    df = pd.read_csv(file_path)
-    return df
+# @st.cache
+# def load_data(file_path):
+#     df = pd.read_csv(file_path)
+#     return df
 
-# Will only run once if already cached
-clean_df = load_data(f'{data_path}/clean_df.csv')
-balanced_df = df = load_data(f'{data_path}/balanced_df.csv')
+# # Will only run once if already cached
+# clean_df = load_data(f'{data_path}/clean_df.csv')
+# balanced_df = df = load_data(f'{data_path}/balanced_df.csv')
 
 # df = pd.DataFrame(clean_df)
 
