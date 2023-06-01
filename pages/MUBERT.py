@@ -27,7 +27,7 @@ st.set_page_config(page_title="MUBERT", page_icon="🧿")
 
 # Get the absolute path to the current directory (where the script is located)
 # curr_dir = os.getcwd()
-MAIN_DIR = "/app/projects"#os.path.dirname(curr_dir)
+MAIN_DIR = "/projects"#os.path.dirname(curr_dir)
 # MAIN_DIR = os.getcwd()
 logging.info(f"LOG: main dir = {MAIN_DIR}")
 
